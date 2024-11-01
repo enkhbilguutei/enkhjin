@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <script
+      src="https://kit.fontawesome.com/a14ae32021.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Үүлэмд зориулав</title>
+
+    <style type="text/css">
+      @font-face {
+        font-family: digit;
+        src: url("digital-7_mono.ttf") format("truetype");
+      }
+    </style>
+    <link href="css/default.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div id="mainDiv">
+      <div id="content">
+        <div id="code">
+          <span class="comments">/**</span><br />
+          <span class="space" /><span class="comments">*Хайраар бүтсэн код</span
+          ><br />
+          <span class="space" /><span class="comments">*/</span><br />
+          Сайн уу Охион!<br />
+          Анх чамайг харсан өдрийг хэзээ гэдгийг мэдэх үү?<br />
+          <span class="comments">// 2022/09/20 Marketing ийн лекц;</span><br />
+          Тэр өдрөөс хойш миний бүрэнхий амьдралд гэрэл асах шиг л болсон;<br />
+          <span class="comments"
+            >// Чиний тэр даруухан байдал, өхөөрдөм хоолой.</span
+          ><br />
+          Чиний бүх зүйл миний зүрхэнд шивэгдсэн мэт тэр мэдрэмж;<br />
+          Тэрнээс яг жилийн дараа...;<br />
+          Хоёулаа бие биенийгнээ таниж мэдсэн;<br />
+          Чат бичичихээд зүрх дэлсээд догдлох мэдрэмж, одоо ч мэдрэгдэж
+          байна;<br />
+          Миний амьдралын хамгийн үнэт мөчүүд зөвхөн чамтайгаа хамт байх үед л
+          тохиолдсон;<br />
+          Тэр дунд нэгэндээ уурлаж гомдох үе зөндөө байсан ч ;<br />
+          <span class="comments"
+            >// Хоёулаа тэр бүгдийг даваад гарч чадсан.</span
+          ><br />
+          Магадгүй тэр бүх зүйлс чи бид 2 ийг илүү хүчирхэг байлгах суурь болсон
+          байх;<br /><br />
+          Миний хэлэх гээд байгаа зүйл гэвэл:<br />
+          Хайрт минь, чамайгаа би үүрд хайрлах болно, бас уурлуулж гомдоож
+          байсан бүх зүйлд уучлаарай;<br /><br />
+          Харин одоо, намайг тэврэхийг хүсч байвал доорх улаан зүрхэн дээр
+          дараарай<br /><br />
+          <span id="heartspan">
+            <a href="slideshow.html" aria-label="Heart image"
+              ><i class="fas fa-heart" id="icon"></i
+            ></a>
+          </span>
+        </div>
+        <div id="loveHeart">
+          <canvas id="garden"></canvas>
+          <div id="words">
+            <div id="messages">
+              Үүрд хамтдаа
+              <div id="elapseClock"></div>
+            </div>
+            <div id="loveu">
+              Хязгааргүй их хайртай шүү<br />
+              <div class="signature">-Билгүүтэйгээс нь</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+
+    <script type="text/javascript">
+      var offsetX = $("#loveHeart").width() / 2;
+      var offsetY = $("#loveHeart").height() / 2 - 55;
+      var together = new Date();
+      together.setFullYear(2022, 12, 7);
+      together.setHours(16);
+      together.setMinutes(30);
+      together.setSeconds(0);
+      together.setMilliseconds(0);
+
+      if (!document.createElement("canvas").getContext) {
+        var msg = document.createElement("div");
+        msg.id = "errorMsg";
+        msg.innerHTML =
+          "browser chine HTML5 demjihgui baina, bravechrome ashiglaarai ho";
+        document.body.appendChild(msg);
+        $("#code").css("display", "none");
+        $("#copyright").css("position", "absolute");
+        $("#copyright").css("bottom", "10px");
+        document.execCommand("stop");
+      } else {
+        setTimeout(function () {
+          startHeartAnimation();
+        }, 5000);
+
+        timeElapse(together);
+        setInterval(function () {
+          timeElapse(together);
+        }, 500);
+
+        adjustCodePosition();
+        $("#code").typewriter();
+      }
+    </script>
+  </body>
+</html>
